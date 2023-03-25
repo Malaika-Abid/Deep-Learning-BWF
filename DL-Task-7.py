@@ -63,3 +63,17 @@ fav_book('anna','salar', 'huma','sam')
 def add(a,b):
     print("Sum of a and b is : " ,a+b)
 add(10, 20)
+
+#using arbitary arguments keyswords
+def user_profile(first, last, **user_info):
+ """Build a dictionary containing everything we know about a user."""
+ profile = {}
+ profile['first_name'] = first
+ profile['last_name'] = last
+ for key, value in user_info.items():
+    profile[key] = value
+    return profile
+info = user_profile('albert', 'einstein',
+ location='princeton',field='physics')
+
+print(info)
